@@ -6,7 +6,6 @@ import com.google.cloud.functions.HttpFunction;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
 
-import java.awt.*;
 import java.io.BufferedWriter;
 
 public class Example implements HttpFunction {
@@ -23,7 +22,7 @@ public class Example implements HttpFunction {
         irb.main();
 
 
-        writer.write("Hello World Function");
+        writer.write("Hello world!");
 
     }
 
