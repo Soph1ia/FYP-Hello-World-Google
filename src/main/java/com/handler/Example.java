@@ -15,11 +15,11 @@ public class Example implements HttpFunction {
 
         // run the main code for benchmark cpu
         BenchMark bm = new BenchMark();
-        bm.main();
+        bm.service(request,response);
 
         // run the main code for the benchmark ram
         ImageRotationBenchMark irb = new ImageRotationBenchMark();
-        irb.main();
+        irb.service(request,response);
 
 
         writer.write("Hello world!");

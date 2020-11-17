@@ -1,5 +1,8 @@
 package com.benchmark;
 
+import com.google.cloud.functions.HttpFunction;
+import com.google.cloud.functions.HttpRequest;
+import com.google.cloud.functions.HttpResponse;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import org.openjdk.jmh.results.RunResult;
@@ -10,15 +13,28 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ImageRotationBenchMark {
+public class ImageRotationBenchMark implements HttpFunction {
     public static String RunResultsForImageRotationBenchmark = new String("no results yet");
     public static int num = 0;
+
+    @Override
+    public void service(HttpRequest httpRequest, HttpResponse httpResponse) throws Exception {
+        BufferedWriter writer = httpResponse.getWriter();
+
+        main();
+
+        // return the http response
+        writer.write("The Image Rotation BenchMark has been run");
+    }
+
+
     @State(Scope.Thread)
     public static class ClassValues {
         public static final Logger logger = Logger.getLogger(ImageRotationBenchMark.class.getName());

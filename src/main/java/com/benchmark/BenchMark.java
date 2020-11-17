@@ -1,5 +1,8 @@
 package com.benchmark;
 
+import com.google.cloud.functions.HttpFunction;
+import com.google.cloud.functions.HttpRequest;
+import com.google.cloud.functions.HttpResponse;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import org.openjdk.jmh.results.RunResult;
@@ -8,6 +11,7 @@ import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
+import java.io.BufferedWriter;
 import java.math.BigInteger;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
@@ -17,7 +21,18 @@ import java.util.logging.Logger;
 
 @BenchmarkMode(Mode.All)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
-public class BenchMark {
+public class BenchMark implements HttpFunction {
+
+    @Override
+    public void service(HttpRequest httpRequest, HttpResponse httpResponse) throws Exception {
+        BufferedWriter writer = httpResponse.getWriter();
+
+        //Run the benchmark code
+        main();
+
+        // return the http response
+        writer.write("Implemented the Benchmark CPU");
+    }
 
     @State(Scope.Thread)
     public static class MyValues {
@@ -29,11 +44,13 @@ public class BenchMark {
         BigInteger result = factorial(new BigInteger("2000"));
         bh.consume(result);
     }
+
     @Benchmark
     public void factorial_3000(Blackhole bh) {
         BigInteger result = factorial(new BigInteger("3000"));
         bh.consume(result);
     }
+
     @Benchmark
     public void factorial_4000(Blackhole bh) {
         BigInteger result = factorial(new BigInteger("4000"));
@@ -46,7 +63,7 @@ public class BenchMark {
                 .forks(1)
                 .build();
         Collection<RunResult> runResults = new Runner(opt).run();
-        MyValues.logger.log(Level.INFO, " The Factorial benchmark has run " );
+        MyValues.logger.log(Level.INFO, " The Factorial benchmark has run ");
     }
 
     private BigInteger factorial(BigInteger num) {

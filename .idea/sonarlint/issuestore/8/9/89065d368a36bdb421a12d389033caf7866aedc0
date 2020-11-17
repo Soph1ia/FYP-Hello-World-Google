@@ -1,0 +1,26 @@
+
+6
+java:S2129" Remove this "String" constructor(•ÔÓ
+t	java:S115/"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÁÙšûÿÿÿÿ
+T
+java:S1854O">Remove this useless assignment to local variable "runResults".(×ÛüÒ
+`	java:S112I"FDefine and throw a dedicated exception instead of using a generic one.(³£Úùüÿÿÿÿ
+U
+java:S1118-":Add a private constructor to hide the implicit public one.(Éêè—øÿÿÿÿ
+j
+java:S1104"OMake num a static final constant or non-public and provide accessors if needed.(‚†’ùÿÿÿÿ
+D
+java:S1444")Make this "public static num" field final(‚†’ùÿÿÿÿ
+t	java:S1150"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÔäÉĞÿÿÿÿÿ
+Q
+java:S2696R"6Make the enclosing method "static" or remove this set.(ö•“ìøÿÿÿÿ
+E
+java:S1481O"/Remove this unused "runResults" local variable.(×ÛüÒ
+_
+java:S1444"IMake this "public static RunResultsForImageRotationBenchmark" field final(•ÔÓ
+…
+java:S1104"oMake RunResultsForImageRotationBenchmark a static final constant or non-public and provide accessors if needed.(•ÔÓ
+„
+java:S3008"nRename this field "RunResultsForImageRotationBenchmark" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•ÔÓ
+L
+java:S2696Q"6Make the enclosing method "static" or remove this set.(ñ¥´Ö
