@@ -58,6 +58,15 @@
             <version>0.32</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Spring -->
+<!--        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-gcp-dependencies</artifactId>
+            <version>1.2.3.RELEASE</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>-->
     </dependencies>
 
     <!-- Required for Java 11 functions in the inline editor -->
@@ -71,6 +80,19 @@
                     <excludes>
                         <exclude>.google/</exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <configuration>
+                    <executable>java</executable>
+                    <arguments>
+                        <argument>-classpath</argument>
+                        <classpath />
+                        <argument>com.benchmark.BenchMark</argument>
+                    </arguments>
                 </configuration>
             </plugin>
         </plugins>

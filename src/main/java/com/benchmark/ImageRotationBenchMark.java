@@ -28,8 +28,6 @@ public class ImageRotationBenchMark implements HttpFunction {
     public void service(HttpRequest httpRequest, HttpResponse httpResponse) throws Exception {
         BufferedWriter writer = httpResponse.getWriter();
 
-        main();
-
         // return the http response
         writer.write("The Image Rotation BenchMark has been run");
     }
@@ -64,10 +62,11 @@ public class ImageRotationBenchMark implements HttpFunction {
 
     }
 
-    public void main() throws Exception {
+    public static void main(String[] args) throws Exception {
         Options opt = new OptionsBuilder()
                 .include(ImageRotationBenchMark.class.getSimpleName())
                 .forks(1)
+                .result("imageRotationBenchmarkResults.json")
                 .build();
 
         Collection<RunResult> runResults = new Runner(opt).run();

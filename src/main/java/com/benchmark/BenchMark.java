@@ -19,18 +19,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-@BenchmarkMode(Mode.All)
+@BenchmarkMode(Mode.Throughput)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 public class BenchMark implements HttpFunction {
 
     @Override
     public void service(HttpRequest httpRequest, HttpResponse httpResponse) throws Exception {
         BufferedWriter writer = httpResponse.getWriter();
-
-        //Run the benchmark code
-        main();
-
-        // return the http response
         writer.write("Implemented the Benchmark CPU");
     }
 
@@ -57,10 +52,11 @@ public class BenchMark implements HttpFunction {
         bh.consume(result);
     }
 
-    public void main() throws RunnerException {
+    public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(BenchMark.class.getSimpleName())
                 .forks(1)
+                .result("cpuBenchmark.json")
                 .build();
         Collection<RunResult> runResults = new Runner(opt).run();
         MyValues.logger.log(Level.INFO, " The Factorial benchmark has run ");
