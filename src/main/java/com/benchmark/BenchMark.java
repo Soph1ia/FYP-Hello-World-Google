@@ -26,6 +26,8 @@ public class BenchMark implements HttpFunction {
     @Override
     public void service(HttpRequest httpRequest, HttpResponse httpResponse) throws Exception {
         BufferedWriter writer = httpResponse.getWriter();
+
+        main();
         writer.write("Implemented the Benchmark CPU");
     }
 
@@ -55,7 +57,7 @@ public class BenchMark implements HttpFunction {
         bh.consume(result);
     }
 
-    public static void main(String[] args) throws RunnerException {
+    public void main() throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(BenchMark.class.getSimpleName())
                 .warmupIterations(20)
