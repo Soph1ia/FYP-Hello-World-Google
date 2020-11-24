@@ -62,7 +62,7 @@ public class BenchMark implements HttpFunction {
                 .include(BenchMark.class.getSimpleName())
                 .warmupIterations(20)
                 .measurementIterations(20)
-                .result("cpuBenchmark.json")
+//                .result("cpuBenchmark.json")
                 .build();
         Collection<RunResult> runResults = new Runner(opt).run();
         MyValues.logger.log(Level.INFO, " The Factorial benchmark has run ");

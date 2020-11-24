@@ -69,7 +69,7 @@ public class ImageRotationBenchMark implements HttpFunction {
                 .include(ImageRotationBenchMark.class.getSimpleName())
                 .warmupIterations(20)
                 .measurementIterations(20)
-                .result("imageRotationBenchmarkResults.json")
+//                .result("imageRotationBenchmarkResults.json")
                 .build();
 
         Collection<RunResult> runResults = new Runner(opt).run();
