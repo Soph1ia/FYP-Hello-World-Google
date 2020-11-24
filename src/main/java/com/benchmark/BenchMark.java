@@ -35,18 +35,21 @@ public class BenchMark implements HttpFunction {
     }
 
     @Benchmark
+    @Fork(0)
     public void factorial_2000(Blackhole bh) {
         BigInteger result = factorial(new BigInteger("2000"));
         bh.consume(result);
     }
 
     @Benchmark
+    @Fork(0)
     public void factorial_3000(Blackhole bh) {
         BigInteger result = factorial(new BigInteger("3000"));
         bh.consume(result);
     }
 
     @Benchmark
+    @Fork(0)
     public void factorial_4000(Blackhole bh) {
         BigInteger result = factorial(new BigInteger("4000"));
         bh.consume(result);
@@ -55,7 +58,8 @@ public class BenchMark implements HttpFunction {
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(BenchMark.class.getSimpleName())
-                .forks(1)
+                .warmupIterations(20)
+                .measurementIterations(20)
                 .result("cpuBenchmark.json")
                 .build();
         Collection<RunResult> runResults = new Runner(opt).run();

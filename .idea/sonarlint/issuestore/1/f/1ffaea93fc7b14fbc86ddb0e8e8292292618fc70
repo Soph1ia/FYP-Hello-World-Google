@@ -1,24 +1,24 @@
 
-F
-java:S2129F"$Remove this "BigInteger" constructor(î„ô£şÿÿÿÿ8‹·ûàİ.
-o	java:S100&"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…¦ùÿÿÿÿ8‹·ûàİ.
-A
-java:S2129C"$Remove this "BigInteger" constructor(¦²Õ´8‹·ûàİ.
-A
-java:S2129D"$Remove this "BigInteger" constructor(ş“˜8‹·ûàİ.
-M
-java:S3416""+Update this logger to use "MyValues.class".(’„äşÿÿÿÿ8‹·ûàİ.
-F
-java:S2129'"$Remove this "BigInteger" constructor(î×½¹øÿÿÿÿ8‹·ûàİ.
-o	java:S1002"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹ÛÇ·ıÿÿÿÿ8ÁÃñáİ.
 A
 java:S21293"$Remove this "BigInteger" constructor(ØÚ¦Ë8ÁÃñáİ.
 o	java:S100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Üùµ»ûÿÿÿÿ8ÁÃñáİ.
+o	java:S1002"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹ÛÇ·ıÿÿÿÿ8ÁÃñáİ.
 [
 java:S1854=">Remove this useless assignment to local variable "runResults".(×ÛüÒ8‹·ûàİ.
-A
-java:S2129-"$Remove this "BigInteger" constructor(»¦ËÆ8ÁÃñáİ.
+o	java:S100&"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…¦ùÿÿÿÿ8‹·ûàİ.
 L
 java:S1481="/Remove this unused "runResults" local variable.(×ÛüÒ8‹·ûàİ.
+M
+java:S3416""+Update this logger to use "MyValues.class".(’„äşÿÿÿÿ8‹·ûàİ.
+A
+java:S2129-"$Remove this "BigInteger" constructor(»¦ËÆ8ÁÃñáİ.
+F
+java:S2129'"$Remove this "BigInteger" constructor(î×½¹øÿÿÿÿ8‹·ûàİ.
+F
+java:S2129F"$Remove this "BigInteger" constructor(î„ô£şÿÿÿÿ8‹·ûàİ.
+A
+java:S2129D"$Remove this "BigInteger" constructor(ş“˜8‹·ûàİ.
+A
+java:S2129C"$Remove this "BigInteger" constructor(¦²Õ´8‹·ûàİ.
 \
 java:S1118!":Add a private constructor to hide the implicit public one.(í—©Ûûÿÿÿÿ8‹·ûàİ.

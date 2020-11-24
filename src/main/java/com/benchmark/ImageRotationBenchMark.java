@@ -41,6 +41,7 @@ public class ImageRotationBenchMark implements HttpFunction {
     }
 
     @Benchmark
+    @Fork(0)
     @BenchmarkMode(Mode.All)
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void rotateAndResizeImage(Blackhole bm) {
@@ -65,7 +66,8 @@ public class ImageRotationBenchMark implements HttpFunction {
     public static void main(String[] args) throws Exception {
         Options opt = new OptionsBuilder()
                 .include(ImageRotationBenchMark.class.getSimpleName())
-                .forks(1)
+                .warmupIterations(20)
+                .measurementIterations(20)
                 .result("imageRotationBenchmarkResults.json")
                 .build();
 
