@@ -6,7 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="FYP-Hello-World-Google" />
+        <module name="Factorial_4000" />
+        <module name="Factorial_3000" />
+        <module name="Image_Rotation" />
+        <module name="Factorial_2000" />
       </profile>
     </annotationProcessing>
   </component>

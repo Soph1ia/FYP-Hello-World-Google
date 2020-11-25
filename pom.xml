@@ -6,7 +6,14 @@
 
     <groupId>org.example</groupId>
     <artifactId>FYP-Hello-World-Google</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>Factorial_2000</module>
+        <module>Factorial_3000</module>
+        <module>Factorial_4000</module>
+        <module>Image_Rotation</module>
+    </modules>
 
     <properties>
         <maven.compiler.target>11</maven.compiler.target>

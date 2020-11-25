@@ -18,17 +18,18 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 @BenchmarkMode(Mode.All)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 public class BenchMark implements HttpFunction {
+
 
     @Override
     public void service(HttpRequest httpRequest, HttpResponse httpResponse) throws Exception {
         BufferedWriter writer = httpResponse.getWriter();
 
         main();
-        writer.write("Implemented the Benchmark CPU");
+
+        writer.write("Implemented the Benchmark CPU- factorial 2000 ");
     }
 
     @State(Scope.Thread)
@@ -43,26 +44,11 @@ public class BenchMark implements HttpFunction {
         bh.consume(result);
     }
 
-    @Benchmark
-    @Fork(0)
-    public void factorial_3000(Blackhole bh) {
-        BigInteger result = factorial(new BigInteger("3000"));
-        bh.consume(result);
-    }
-
-    @Benchmark
-    @Fork(0)
-    public void factorial_4000(Blackhole bh) {
-        BigInteger result = factorial(new BigInteger("4000"));
-        bh.consume(result);
-    }
-
     public void main() throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(BenchMark.class.getSimpleName())
                 .warmupIterations(20)
                 .measurementIterations(20)
-//                .result("cpuBenchmark.json")
                 .build();
         Collection<RunResult> runResults = new Runner(opt).run();
         MyValues.logger.log(Level.INFO, " The Factorial benchmark has run ");
@@ -77,6 +63,4 @@ public class BenchMark implements HttpFunction {
         }
         return total;
     }
-
 }
-

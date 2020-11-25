@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ImageRotationBenchMark implements HttpFunction {
+public class BenchMark implements HttpFunction {
     public static String RunResultsForImageRotationBenchmark = new String("no results yet");
     public static int num = 0;
 
@@ -36,7 +36,7 @@ public class ImageRotationBenchMark implements HttpFunction {
 
     @State(Scope.Thread)
     public static class ClassValues {
-        public static final Logger logger = Logger.getLogger(ImageRotationBenchMark.class.getName());
+        public static final Logger logger = Logger.getLogger(BenchMark.class.getName());
         static final int scaledWidth = 1024;
         static final int scaledHeight = 1000;
     }
@@ -66,10 +66,9 @@ public class ImageRotationBenchMark implements HttpFunction {
 
     public void main() throws Exception {
         Options opt = new OptionsBuilder()
-                .include(ImageRotationBenchMark.class.getSimpleName())
+                .include(BenchMark.class.getSimpleName())
                 .warmupIterations(20)
                 .measurementIterations(20)
-//                .result("imageRotationBenchmarkResults.json")
                 .build();
 
         Collection<RunResult> runResults = new Runner(opt).run();

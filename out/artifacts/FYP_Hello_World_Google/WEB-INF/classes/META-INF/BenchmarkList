@@ -1,4 +1,0 @@
-JMH S 23 com.benchmark.BenchMark S 56 com.benchmark.generated.BenchMark_factorial_4000_jmhTest S 14 factorial_4000 S 3 All E A 1 1 1 E E E E E E E E E E E E E E U 12 MILLISECONDS E E 
-JMH S 36 com.benchmark.ImageRotationBenchMark S 75 com.benchmark.generated.ImageRotationBenchMark_rotateAndResizeImage_jmhTest S 20 rotateAndResizeImage S 3 All E A 1 1 1 E E E E E E E E E E E E E E U 7 SECONDS E E 
-JMH S 23 com.benchmark.BenchMark S 56 com.benchmark.generated.BenchMark_factorial_2000_jmhTest S 14 factorial_2000 S 3 All E A 1 1 1 E E E E E E E E E E E E E E U 12 MILLISECONDS E E 
-JMH S 23 com.benchmark.BenchMark S 56 com.benchmark.generated.BenchMark_factorial_3000_jmhTest S 14 factorial_3000 S 3 All E A 1 1 1 E E E E E E E E E E E E E E U 12 MILLISECONDS E E 
